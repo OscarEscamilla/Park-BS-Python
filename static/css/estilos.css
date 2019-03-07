@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto+Condensed');
+
+*{
+	font-family: 'Roboto Condensed', sans-serif;
+	padding: 0em;
+	margin: 0em;
+}
+
+/*HEADER EN MASTERS*/
+.navbar{
+	background-color: #ffeb3b !important;
+	padding-bottom: 0em;
+	margin-bottom: 0em;
+}
+
+.navbar a{
+	color: #191919 !important;
+	
+}
+
+.navbar-brand{
+	font-weight:bold;
+}
+.navbar-toggler-icon{
+	background-color: #484747;
+	border-radius: 0.2em;
+}
+
+/*HOME*/
+.jumbotron{
+	background-image: url('../images/transito.jpg');
+	background-position: 0% 25%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: white;
+	margin-left: 0em;
+	margin-right: 0em;
+    
+}
+.container{
+	height: 100%;
+}
+
+.sombras{
+	text-shadow: black 0.3em 0.3em 0.3em;
+}
+
+.btn{
+	background-color: #ffeb3b !important;
+	color: black;
+	border-color: transparent;
+}
+/*CONTACTO*/
+
+.contact{
+	background-color: #ffeb3b;
+	margin-top: 5em;
+}
+/*FOOTER*/
+footer{
+	background-color: #212121;
+}
