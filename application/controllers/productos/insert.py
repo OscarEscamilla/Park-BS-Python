@@ -15,4 +15,4 @@ class Insert:
 		precio = formulario['precio']
 		descripcion = formulario['descripcion']
 		config.model_productos.insert_producto(nombre, marca, precio, descripcion)
-		raise web.seeother('/')
+		raise web.seeother('/') 

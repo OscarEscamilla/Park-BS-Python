@@ -11,6 +11,7 @@
 	background-color: #ffeb3b !important;
 	padding-bottom: 0em;
 	margin-bottom: 0em;
+	width: 100%;
 }
 
 .navbar a{
@@ -20,6 +21,11 @@
 
 .navbar-brand{
 	font-weight:bold;
+}
+
+#brand{
+	width: 20px;
+	height: 15px;
 }
 .navbar-toggler-icon{
 	background-color: #484747;
@@ -35,28 +41,90 @@
     color: white;
 	margin-left: 0em;
 	margin-right: 0em;
+	width: 100%;
     
 }
+
 .container{
 	height: 100%;
 }
 
 .sombras{
-	text-shadow: black 0.3em 0.3em 0.3em;
+	text-shadow: black 0.1em 0.1em 0.1em;
 }
 
-.btn{
+.down{
 	background-color: #ffeb3b !important;
 	color: black;
 	border-color: transparent;
 }
+/*cards*/
+
+.card-p{
+	margin-bottom: 1em;
+	text-align: justify;
+}
+.card-p h5{
+	text-align: center;
+}
+
+
+
+
+
+
+
 /*CONTACTO*/
 
 .contact{
 	background-color: #ffeb3b;
-	margin-top: 5em;
+
 }
+.contact2{
+	padding: 2em;
+
+}
+
+/*acerca de*/
+
+.acerca{
+	background-color: #212121;
+	padding: 3em;
+}
+.text-acerca{
+	color: white;
+	
+}
+
+.text-acerca h3{
+	
+	text-align: center;;
+}
+
+.text-acerca p{
+	text-align: justify;
+}
+
+
+
+
 /*FOOTER*/
 footer{
 	background-color: #212121;
+}
+
+.fo{
+
+	color: white;
+
+}
+
+.fot {
+	padding: 2em;
+
+	text-align: center;
+}
+.fo-bottom{
+	text-align: center;
+	color: white;
 }
