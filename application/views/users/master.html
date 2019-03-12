@@ -1,0 +1,47 @@
+$def with(page)
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Park-BS</title>
+
+	<link rel="stylesheet" href="/static/css/bootstrap.min.css">
+	<link rel="stylesheet" href="/static/css/estilos.css">
+  <link rel="icon" type="icon" href="../../static/images/car-compact.png">
+</head>
+<body>
+	<header>
+
+	
+<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+  <a class="navbar-brand" href="#"><img src="../../static/images/car-compact (4).png" alt="" id="logo">Park-BS</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item active">
+        <a class="nav-link" href="/">Destacados</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/registro">Historial</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link disabled" href="/login">Log out</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+		
+
+	</header>
+	<br>
+	
+	$:page
+
+    <script src="/static/js/jquery.min.js"></script>
+    <script src="/static/js/bootstrap.min.js"></script>   
+
+</body>
+</html>

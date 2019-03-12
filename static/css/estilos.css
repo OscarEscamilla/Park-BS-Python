@@ -10,10 +10,12 @@
 .navbar{
 	background-color: #ffeb3b !important;
 	padding-bottom: 0em;
-	margin-bottom: 0em;
 	width: 100%;
 }
-
+#logo{
+	margin-right: 0.3em;
+}
+ 
 .navbar a{
 	color: #191919 !important;
 	
@@ -55,6 +57,7 @@
 
 .down{
 	background-color: #ffeb3b !important;
+	box-shadow: 8px 8px 5px 0px rgba(0,0,0,0.75); 
 	color: black;
 	border-color: transparent;
 }
@@ -68,6 +71,10 @@
 	text-align: center;
 }
 
+.card{
+	box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+}
+
 
 
 
@@ -78,7 +85,7 @@
 
 .contact{
 	background-color: #ffeb3b;
-
+	color: #1B1A1A;
 }
 .contact2{
 	padding: 2em;
@@ -127,4 +134,36 @@ footer{
 .fo-bottom{
 	text-align: center;
 	color: white;
+}
+
+
+
+/* ************************************ESTILOS DE LOGIN*********************************************/
+
+
+.container-login{
+	background-image: url('../images/transito.jpg');
+	padding: 3em;
+	margin: 0em;
+}
+
+#log-form{
+
+	background-color: #212121;
+	box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75); 
+	padding: 2em;
+	margin-top: 5em;
+	margin-bottom:  18em;
+
+	color: white;
+
+}
+#recuperacion{
+	color: #1D65DC;
+	float: right;
+	font-size: 0.9em;
+}
+
+.form-control{
+
 }
