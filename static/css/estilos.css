@@ -152,7 +152,7 @@ footer{
 	background-color: #212121;
 	box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75); 
 	padding: 2em;
-	margin-top: 5em;
+	margin-top: 3em;
 	margin-bottom:  18em;
 
 	color: white;
@@ -165,5 +165,5 @@ footer{
 }
 
 .form-control{
-
+	
 }

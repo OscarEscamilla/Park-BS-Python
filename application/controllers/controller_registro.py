@@ -18,10 +18,21 @@ class Registro:
 		apellidos = formulario['apellidos']
 		telefono = formulario['telefono']
 		correo = formulario['correo']
-		password = hashlib.md5(formulario['password']).hexdigest() #aplica md5 a la cadena de texto 
+		password = formulario['password'] #aplica md5 a la cadena de texto 
 		passwordconf = formulario['passwordconf']
 		rol = '1'
-		config.model_registro.insert_usuario(nombre, apellidos, telefono, correo, password, rol)
-		raise web.seeother('/') 
+		mensaje = "las contrasenas no coinciden"
+
+		try:
+			if password == passwordconf:
+				password = hashlib.md5(formulario['password']).hexdigest() #aplica md5 a la cadena de texto 
+				config.model_registro.insert_usuario(nombre, apellidos, telefono, correo, password, rol)
+				raise web.seeother('/') 
+		except Exception as e:
+			return "error de regsiitro controller"
+
+		
+		
+
 		
 		

@@ -6,4 +6,12 @@ class Home:
 		pass
 
 	def GET(self):
-		return config.render.home()
+		return config.render.home() 
+
+	def POST(self):
+
+		formulario = web.input() #accedemos al formulario redenerizado en el metodo GET
+
+		nombre = formulario['nombre']
+		telefono = formulario['telefono']
+		
