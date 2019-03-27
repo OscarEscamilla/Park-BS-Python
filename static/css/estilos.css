@@ -8,17 +8,24 @@
 
 /*HEADER EN MASTERS*/
 .navbar{
-	background-color: #ffeb3b !important;
-	padding-bottom: 0em;
+	background-color: #ffd54f !important;
+
 	width: 100%;
 }
 #logo{
 	margin-right: 0.3em;
 }
- 
+
 .navbar a{
-	color: #191919 !important;
-	
+	color: #212121 !important;
+
+}
+
+.nav-link:hover{
+	color: white!important;
+	background: #212121;
+	border-radius: 0px;
+
 }
 
 .navbar-brand{
@@ -34,6 +41,14 @@
 	border-radius: 0.2em;
 }
 
+.navbar-toggler{
+
+	border: 0;
+
+}
+
+
+
 /*HOME*/
 .jumbotron{
 	background-image: url('../images/transito.jpg');
@@ -43,22 +58,26 @@
     color: white;
 	margin-left: 0em;
 	margin-right: 0em;
-	width: 100%;
-    
+	width: 100% !important;
+
 }
 
-.container{
-	height: 100%;
-}
+
 
 .sombras{
 	text-shadow: black 0.1em 0.1em 0.1em;
 }
 
 .down{
-	background-color: #ffeb3b !important;
-	box-shadow: 8px 8px 5px 0px rgba(0,0,0,0.75); 
+	background-color: #ffd54f  !important;
 	color: black;
+	border-color: transparent;
+	border-radius: 0;
+}
+
+.down:hover{
+	color: white!important;
+	background: rgb(185, 174, 80) !important;
 	border-color: transparent;
 }
 /*cards*/
@@ -73,7 +92,14 @@
 
 .card{
 	box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+	transition: all 0.25s;
 }
+.card:hover{
+	box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+	transform: translateY(-15px);
+    /*box-shadow: 0 12px 16px rgba(0, 0, 0, 0.2);*/
+}
+
 
 
 
@@ -84,7 +110,7 @@
 /*CONTACTO*/
 
 .contact{
-	background-color: #ffeb3b;
+
 	color: #1B1A1A;
 }
 .contact2{
@@ -100,11 +126,12 @@
 }
 .text-acerca{
 	color: white;
-	
+	padding: 3em;
+
 }
 
 .text-acerca h3{
-	
+
 	text-align: center;;
 }
 
@@ -117,12 +144,12 @@
 
 /*FOOTER*/
 footer{
-	background-color: #212121;
+	background-color: #ffd54f !important;
 }
 
 .fo{
 
-	color: white;
+	color: #212121 ;
 
 }
 
@@ -133,7 +160,7 @@ footer{
 }
 .fo-bottom{
 	text-align: center;
-	color: white;
+	color: #212121 ;
 }
 
 
@@ -142,28 +169,155 @@ footer{
 
 
 .container-login{
-	background-image: url('../images/transito.jpg');
+	background: #212121;
+
 	padding: 3em;
-	margin: 0em;
+	margin: 2em;
+
+}
+
+.btn-success{
+	border-radius: 0;
+}
+
+#btn-login{
+	width: 100%;
 }
 
 #log-form{
 
 	background-color: #212121;
-	box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75); 
 	padding: 2em;
-	margin-top: 3em;
-	margin-bottom:  18em;
+	margin-top: 3em; margin-bottom: 14em;
 
 	color: white;
 
 }
+
+.link{
+	margin: auto;
+}
+
 #recuperacion{
-	color: #1D65DC;
+	color: grey;
 	float: right;
 	font-size: 0.9em;
 }
 
-.form-control{
-	
+
+/* alertas*/
+
+
+.form-inline{
+
+	margin-top: 8em;
+
+}
+
+
+/*inputs*/
+
+#label-invisible{
+	color: #212121 !important;
+}
+
+
+.material{
+	background: transparent;
+	border-right: 0;
+	border-left: 0;
+	border-top: 0;
+	font-size: 0.9em;
+	border-bottom: 1;
+	border-color: 2px solid white;
+	border-radius: 0px;
+	box-shadow: none !important;
+	/*color: white;*/
+	color: rgb(180, 184, 184) !important;
+}
+
+.material:focus{
+	outline: none;
+	background: transparent;
+	border-right: 0;
+	border-left: 0;
+	border-top: 0;
+  	border-bottom: 1;
+  	border-color: 2px solid white;
+  	border-radius: 0px;
+  	font-size: 0.9em;
+  	box-shadow: none;
+}
+
+
+
+
+
+/* ESTILOS DE INTERFACES DE USUARIOS LOGEADOS */
+
+/*boton  de cerrar sesion */
+.logout{
+	margin-left: 2em;
+}
+
+/*boton de buscar down2 */
+
+
+.down2:hover{
+	background-color: #ffd54f !important;
+	color: black;
+	clear: both;
+	border-color: transparent;
+	border-radius: 0;
+}
+
+.down2{
+	border-radius: 0;
+	background: #212121 !important;
+
+}
+
+.search{
+	margin-top: 3em;
+	margin-right: 0.5em;
+	float: right;
+
+}
+
+.nav_p{
+	margin: 0em;
+}
+
+.container-fluid{
+	margin: 0;
+	padding: 0;
+
+}
+
+.aside{
+	border-color: 2px solid black;
+
+}
+
+.perfil h5{
+	text-align: center;
+	color: white;
+}
+
+.perfil{
+	background:  #212121;
+}
+
+
+.contenedor{
+	background: grey;
+}
+
+.card img{
+	width: 150px;
+	height: 150px;
+	margin: 70px;
+	margin-top: 0em !important;
+	margin-bottom: 0em !important;
+
 }

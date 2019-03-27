@@ -1,30 +1,43 @@
+$def with(message)
 
-	<div class="container-fluid container-login">
-		<div class="row ">
-		
-			<div class="col-md-4 " >
-				
-			</div>
-			<div class="col-md-4" id="log-form">
-				<h4>Log in</h4>
+<div class="container-fluid container-login">
+	<div class="row">
+		<div class="col-md-3"></div>
+		<div class="col-md-6">
+			$if message == 1:
 				<br>
-				<form action="" method="POST">
-				<div class="form-group">
-
-					<label for="correo" class="col-form-label">Username</label>
-					 <input type="text" name="correo" class="form-control" placeholder="username...">
-
+				<br>
+				<br>
+				<div class="alert alert-danger" role="alert">
+					 ¡Contraseña o correo invalidos!
 				</div>
-				<div class="form-group">
-
-					<label for="password" class="col-form-label">Contraseña</label>
-					 <input type="text" name="password" class="form-control" placeholder="password...">
-
-				</div>
-				<button type="submit" class="btn btn-success">Login</button><a href="" id="recuperacion">Recuperar contraseña</a>
-			</form>
-			</div>
-			<div class="col-md-4"></div>
 		</div>
+		<div class="col-md-3"></div>
 	</div>
-	
+	<div class="row ">
+		<div class="col-md-4 " ></div>
+		<div class="col-md-4" id="log-form">
+			<h4>Iniciar Sesion</h4>
+			<br>
+			<form action="" method="POST">
+			<div class="form-group">
+				<label for="correo" class="col-form-label">Correo</label>
+				 <input type="text" name="correo" class="form-control material" placeholder="Correo">
+			</div>
+			<div class="form-group">
+				<label for="password" class="col-form-label">Contraseña</label>
+				<input type="password" name="password" class="form-control material" placeholder="Contraseña">
+			</div>
+			<ul class="link">
+				<li><a href="" id="recuperacion" >¿No tienes una cuenta? ¡Registrate ya!</a></li>
+				<li><a href="" id="recuperacion"  >¿Olvidaste tu contraseña?</a></li>
+			</ul>
+			<br>
+			<br>
+			<button type="submit" class="btn btn-success down" id="btn-login">Log in</button>
+		</form>
+		</div>
+		<div class="col-md-4"></div>
+	</div>
+
+</div>

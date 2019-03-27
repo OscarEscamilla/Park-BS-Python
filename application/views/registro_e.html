@@ -1,0 +1,105 @@
+
+	<div class="container-fluid container-login">
+		<div class="row ">
+
+			<div class="col-md-3 " >
+
+			</div>
+			<div class="col-md-6"  id="log-form">
+				<h4>¡Registrate como empresa!</h4>
+				<p>obten mas clientes y mejora tus ingresos</p>
+				<br>
+
+				<form action="" method="POST">
+
+	    			<div class="form-group">
+							<label for="nombre">Nombre de la empresa</label>
+	    			  <input type="text" class="form-control material"  name="nombre" placeholder="Nombre empresa" required>
+	   				</div>
+	   				<br>
+
+	    			<div class="form-group">
+							<label for="titular">Nombe del dueño o titular</label>
+	     				<input type="text" class="form-control material" name="titular" placeholder="Nombre del Titular" required>
+	   				</div>
+					<br>
+	   				<div class="form-group">
+							<label for="">Tarifa<span>(por Hora)</span></label>
+	   					<input type="text" placeholder="Tarifa por hora" class="form-control material" pattern="[0-9]+"  name="tarifa" required>
+	   				</div>
+
+	   				<br>
+
+	   				<div class="row">
+	   					<div class="col">
+								<label for="telefono">Telefono</label>
+	    			  	<input type="text" class="form-control material"  name="telefono" placeholder="Telefono" required>
+		   				</div>
+		    			<div class="col">
+								<label for="correo">Correo</label>
+	     				<input type="email" class="form-control material" name="correo" placeholder="Correo" required>
+	   					</div>
+	   				</div>
+	   				<br>
+	   				<div class="row">
+	   					<div class="col">
+	   						<label for="apertura">Hora de Apertura </label>
+	   						<input type="time" class="form-control material" value="00:00" name="apertura" required>
+	   					</div>
+	   					<div class="col">
+	   						<label for="cierre">Hora de Cierre </label>
+	   						<input type="time" class="form-control material" value="00:00" name="cierre" required>
+	   					</div>
+	   				</div>
+
+	   				<br>
+	   				<div class="row">
+	   					<div class="col">
+
+
+						 <label for="">Dias Habiles</label>
+							<select class="form-control material" name="dia_inicio">
+							<option value="volvo">Lunes</option>
+							<option value="saab">Martes</option>
+							<option value="mercedes">Miercoles</option>
+							<option value="audi">Jueves</option>
+							<option value="audi">Viernes</option>
+							<option value="audi">Sabado</option>
+							<option value="audi">Domingo</option>
+						</select>
+					</div>
+					<div class="col">
+
+
+						 <label for="dia_final" id="label-invisible">final</label>
+ 						<select class="form-control material" name="dia_final">
+ 						<option value="volvo">Lunes</option>
+ 						<option value="saab">Martes</option>
+ 						<option value="mercedes">Miercoles</option>
+ 						<option value="audi">Jueves</option>
+ 						<option value="audi">Viernes</option>
+ 						<option value="audi">Sabado</option>
+ 						<option value="audi">Domingo</option>
+ 					</select>
+					</div>
+	   				</div>
+	   				<br>
+	   				<div class="row">
+	   					<div class="col">
+								<label for="password">Contraseña</label>
+						 <input type="password" name="password" class="form-control material" placeholder="contraseña..." required>
+	   					</div>
+	   					<div class="col">
+								<label for="passwordconf">Confirmar Contraseña</label>
+								 <input type="password" name="passwordconf" class="form-control material" placeholder="Confirmar contraseña..." required>
+	   					</div>
+	   				</div>
+
+					<br>
+					<a href="/login" id="recuperacion">¿Yatienes una cuenta? inicia sesion</a>
+					<button type="submit" class="btn btn-success down">Registrarme</button>
+			</form>
+			</div>
+			<div class="col-md-3"></div>
+		</div>
+	</div>

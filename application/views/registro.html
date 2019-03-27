@@ -1,51 +1,61 @@
-
+$def with(alert)
 	<div class="container-fluid container-login">
+		<div class="row">
+			<div class="col-md-3"></div>
+			<div class="col-md-6">
+				$if alert == 1:
+					<div class="alert alert-danger" role="alert">
+						 ¡Las contraseñas no coinciden!
+					</div>
+			</div>
+			<div class="col-md-3"></div>
+		</div>
 		<div class="row ">
-		
+
 			<div class="col-md-3 " >
-				
+
 			</div>
 			<div class="col-md-6"  id="log-form">
-				<h4>Registro de usuario</h4>
+				<h4>¡Registrate como usuario!</h4>
+				<p>reserva un lugar seguro para tu auto donde sea...</p>
 				<br>
+
 				<form action="" method="POST">
-				<div class="form-group">
 
-					<label for="nombre" class="col-form-label">Nombre</label>
-					 <input type="text" name="nombre" class="form-control" placeholder="nombre...">
+	    			<div class="form-group">
+							<label for="nombre">Nombre</label>
+	    			  <input type="text" class="form-control material"  name="nombre" placeholder="Nombre">
+	   				</div>
+	   				<br>
+	    			<div class="form-group">
+							<label for="apellidos">Apellidos</label>
+	     				<input type="text" class="form-control material" name="apellidos" placeholder="Apellidos">
+	   				</div>
+	   				<br>
+	   				<div class="row">
+	   					<div class="col">
+								<label for="telefono">Telefono</label>
+	    			  	<input type="text" class="form-control material"  name="telefono" placeholder="Telefono">
+		   				</div>
+		    			<div class="col">
+								<label for="correo">Correo</label>
+	     				<input type="email" class="form-control material" name="correo" placeholder="Correo">
+	   					</div>
+	   				</div>
+	   				<br>
+	   				<div class="row">
+	   					<div class="col">
+								<label for="password">Contraseña</label>
+						 <input type="password" name="password" class="form-control material" placeholder="Contraseña">
+					</div>
+					<div class="col">
+						<label for="passwordconf">Confirmar Contraseña</label>
+						 <input type="password" name="passwordconf" class="form-control material" placeholder="Confirmarcion">
 
-				</div>
-				<div class="form-group">
-
-					<label for="apellidos" class="col-form-label">Apellidos</label>
-					 <input type="text" name="apellidos" class="form-control" placeholder="apellidos...">
-
-				</div>
-				<div class="form-group">
-
-					<label for="telefono" class="col-form-label">Telefono</label>
-					 <input type="text" name="telefono" class="form-control" placeholder="telefono...">
-
-				</div>
-				<div class="form-group">
-
-					<label for="correo" class="col-form-label">Correo</label>
-					 <input type="email" name="correo" class="form-control" placeholder="correo...">
-
-				</div>
-				<div class="form-group">
-
-					<label for="password" class="col-form-label">Password</label>
-					 <input type="password" name="password" class="form-control" placeholder="contraseña...">
-
-				</div>
-				<div class="form-group">
-
-					<label for="passwordconf" class="col-form-label">Confirmar Password</label>
-					 <input type="password" name="passwordconf" class="form-control" placeholder="confirmar password...">
-
-				</div>
-				<button type="submit" class="btn btn-success">Registrarme</button>
+					</div>
+	   				</div>
+					<br>
+					<button type="submit" class="btn btn-success  down">Registrarme</button>
 			</form>
 			</div>
 			<div class="col-md-3"></div>

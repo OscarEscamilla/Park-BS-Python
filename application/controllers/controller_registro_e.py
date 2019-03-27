@@ -2,44 +2,35 @@ import web
 import config as config
 import hashlib #permite usar hash md5
 
-#mensaje = 1 error de contrasenas no coinciden 
-#mensaje = 2 
-class Registro:
+
+class Registroe:
 	def __init__(self):
 		pass
 
 	def GET(self):
-		alert = 0
-		return config.render.registro(alert)
+		return config.render.registro_e()
 
 	def POST(self):
 		
 		try:
-			formulario = web.input() #alamacenamos todos los datos del formulario en variales
+			formulario = web.input()
 			nombre = formulario['nombre']
 			apellidos = formulario['apellidos']
 			telefono = formulario['telefono']
 			correo = formulario['correo']
 			password = formulario['password'] #aplica md5 a la cadena de texto 
 			passwordconf = formulario['passwordconf']
-			rol = '1'
+			rol = '2'
+			mensaje = "las contrasenas no coinciden"
 			usuarios = []
-			usuarios = config.model_registro.select_usuarios()
+			usuarios = config.model_registro_e.select_usuarios()
+
+
+
 		
 			if password == passwordconf:
 				password = hashlib.md5(formulario['password']).hexdigest() #aplica md5 a la cadena de texto 
-				config.model_registro.insert_usuario(nombre, apellidos, telefono, correo, password, rol)
-				raise web.seeother('/login')
-			else:
-				alert = 1
-				return config.render.registro(alert)
-				
+				config.model_registro_e.insert_usuario(nombre, apellidos, telefono, correo, password, rol)
+				raise web.seeother('/') 
 		except Exception as e:
-			alert = 1
-			return config.render.registro(alert)
-
-		
-		
-
-		
-		 
+			return "error de regsiitro controller"

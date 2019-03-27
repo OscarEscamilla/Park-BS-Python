@@ -4,7 +4,11 @@ urls = (
 	'/','application.controllers.home.Home',
 	'/login','application.controllers.controller_login.Login',
 	'/registro','application.controllers.controller_registro.Registro',
-	'/index_u','application.controllers.users.controller_index_user.Index'
+	'/registroe','application.controllers.controller_registro_e.Registroe',
+
+	
+	'/index_u','application.controllers.users.controller_index_user.Index',
+	'/index_p','application.controllers.parks.controller_index_parks.Index'
 
 	
 
@@ -15,7 +19,7 @@ urls = (
 	#'/view/(.*)', 'application.controllers.productos.view.View', 
 	
 
-
+ 
 
 	)
 
