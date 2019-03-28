@@ -5,7 +5,7 @@
 			<div class="col-md-3 " >
 
 			</div>
-			<div class="col-md-6"  id="log-form">
+			<div class="col-md-6 log-form" >
 				<h4>¡Registrate como empresa!</h4>
 				<p>obten mas clientes y mejora tus ingresos</p>
 				<br>
@@ -19,12 +19,39 @@
 	   				<br>
 
 	    			<div class="form-group">
-							<label for="titular">Nombe del dueño o titular</label>
+							<label for="titular">Nombre del dueño o titular</label>
 	     				<input type="text" class="form-control material" name="titular" placeholder="Nombre del Titular" required>
 	   				</div>
 					<br>
+					<div class="form-group">
+						<label for="">Colonia</label>
+	   					<input type="text" placeholder="Colonia" class="form-control material" pattern="[0-9]+"  name="colonia" required>
+					</div>
+					<div class="row">
+						<div class="col">
+							<label for="calle">Calle</label>
+							<input type="text" name="calle" placeholder="Calle" class="form-control material"  required>
+						</div>
+						<div class="col">
+							<label for="numero">Numero</label>
+							<input type="text" name="numero" placeholder="numero" class="form-control material"  required>
+						</div>
+					</div>
+					<br>
+
+					<div class="row">
+						<div class="col">
+							<label for="latitud">Latitud</label>
+							<input type="text" name="latitud" value="" required  class="form-control material" placeholder="Latitud">
+						</div>
+						<div class="col">
+							<label for="longitud">Longitud</label>
+							<input type="text" name="longitud" value="" required class="form-control material" placeholder="Longitud">
+						</div>
+					</div>
+					<br>
 	   				<div class="form-group">
-							<label for="">Tarifa<span>(por Hora)</span></label>
+						<label for="">Tarifa<span>(por Hora)</span></label>
 	   					<input type="text" placeholder="Tarifa por hora" class="form-control material" pattern="[0-9]+"  name="tarifa" required>
 	   				</div>
 
@@ -96,10 +123,54 @@
 	   				</div>
 
 					<br>
-					<a href="/login" id="recuperacion">¿Yatienes una cuenta? inicia sesion</a>
-					<button type="submit" class="btn btn-success down">Registrarme</button>
+					<a href="/login" id="recuperacion">¿Ya tienes una cuenta? inicia sesion</a>
+					<button type="submit" class="btn btn-success down btn-registro">Registrarme</button>
 			</form>
 			</div>
-			<div class="col-md-3"></div>
+			<div class="col-md-3">
+				<div id="map"></div>
+			</div>
 		</div>
+
 	</div>
+	<!--
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBs7826NsEFJv4kGgIIGEW-Ky8Kq9KutYM&callback=initMap" async defer></script>
+	<script src="../../static/js/main.js"></script>
+	<script src="../../static/js/localizacion.js"></script>-->
+   <script>
+
+	   class Localizacion {
+		      constructor(callback) {
+		          if (navigator.geolcation) {
+		              //obtenemos ubicacion
+		              navigator.geolcation.getCurrentPosition((position)=>{
+		                  this.latitude = position.coords.latitude;
+		                  this.longitude = position.coords.longitude;
+						  callback();
+		              });//obetemos la posicion del navegador
+
+		          }else{
+		              alert("su navegador no soporta geolocalizacion :( ");
+		          }
+		      }
+		  }
+
+		 function initMap() {
+		   	const ubicacion = new Localizacion(()=>{
+				const options = {
+					center: {
+						lat: ubicacion.latitude,
+						lng: ubicacion.longitude
+					},
+					zoom : 15
+				}
+				var map = document.getElementById('map');
+
+				const mapa = new google.maps.Map(map, options);//dibujamos el mapa
+		   	});
+		   console.log(map);
+	   }
+
+   </script>
+   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBs7826NsEFJv4kGgIIGEW-Ky8Kq9KutYM&callback=initMap"
+   async defer></script>

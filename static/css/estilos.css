@@ -80,6 +80,11 @@
 	background: rgb(185, 174, 80) !important;
 	border-color: transparent;
 }
+
+
+.btn-registro{
+	width: 30%;
+}
 /*cards*/
 
 .card-p{
@@ -184,7 +189,12 @@ footer{
 	width: 100%;
 }
 
-#log-form{
+
+.btn-registro{
+	width: 40%;
+}
+
+.log-form{
 
 	background-color: #212121;
 	padding: 2em;
@@ -194,9 +204,12 @@ footer{
 
 }
 
-.link{
-	margin: auto;
+.log-form h4{
+	color: #ffd54f;
 }
+
+
+
 
 #recuperacion{
 	color: grey;
@@ -250,10 +263,16 @@ footer{
 }
 
 
+/*mapas*/
 
-
+#map{
+	width: 200px;
+	height: 200px;
+}
 
 /* ESTILOS DE INTERFACES DE USUARIOS LOGEADOS */
+
+
 
 /*boton  de cerrar sesion */
 .logout{

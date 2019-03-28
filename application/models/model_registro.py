@@ -8,7 +8,7 @@ db = config.db #accede al archivo config y al objeto db
 """ METODO PARA LOCALIZAR EL USUARIO QUE INTENTA LOGEARSE"""
 def insert_usuario(nombre, apellidos, telefono,  correo, password, rol):
 	try:
-		return db.insert('usuarios', 
+		return db.insert('usuarios',
 			nombre = nombre,
 			apellidos = apellidos,
 			telefono = telefono,
@@ -18,13 +18,13 @@ def insert_usuario(nombre, apellidos, telefono,  correo, password, rol):
 	except Exception as e:
 		print "Model insert_user Error ()".format(e.args)
 		print "Model insert_user Message {}".format(e.message)
-		return None 
+		return None
 
 def select_usuarios():
 	try:
 
-		return db.select('usuarios' ) 
+	    return db.select('usuarios' )
 	except Exception as e:
 		print "Model select_usuarios Error {}".format(e.args)
         print "Model select_usuarios Message {}".format(e.message)
-        return None 
+        return None
