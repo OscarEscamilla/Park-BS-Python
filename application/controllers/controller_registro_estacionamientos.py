@@ -14,7 +14,7 @@ class Registro_estacionamientos:
 	def POST(self):
 		
 		try: 
-			
+			seg = ':00'
 			formulario = web.input() #objeto para acceder a los valores recibidos por el metodo POST
 			nombre = formulario['nombre']
 			titular = formulario['titular']
@@ -27,24 +27,26 @@ class Registro_estacionamientos:
 			tarifa = formulario['tarifa']
 			telefono = formulario['telefono']
 			correo = formulario['correo']
-			"""
-			hora_apertura = formulario['hora_apertura']
-			hora_cierre = formulario['hora_cierre']
-			print hora_apertura, hora_cierre
-			"""
+			
+			hora_apertura = formulario['hora_apertura'] + seg
+			hora_cierre = formulario['hora_cierre'] + seg
+			
 
 			dia_inicio = formulario['dia_inicio']
 			dia_final = formulario['dia_final']
 			password = formulario['password']
 			passwordconf = formulario['passwordconf']
-			rol = 2
+
+			
+			print hora_apertura, hora_cierre
+			rol = '2'
 
 			mensaje = "las contrasenas no coinciden"
 			
 			if password == passwordconf:
 				
 				password = hashlib.md5(formulario['password']).hexdigest() #aplica md5 a la cadena de texto 
-				#config.model_estacionamientos.insert_estacionamiento(nombre, apellidos, telefono, correo, password, rol)
+				config.model_estacionamientos.insert_estacionamiento(nombre,titular, colonia, calle, numero, cp,  latitud, longitud, tarifa,telefono, correo, hora_apertura, hora_cierre, dia_inicio, dia_final ,password, rol)
 				print password
 				raise web.seeother('/login')
 			

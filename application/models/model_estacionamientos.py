@@ -5,13 +5,24 @@ import config as config
 db = config.db
 
 """ METODO PARA INSERTAR UN ESTACIONAIENTO"""
-def insert_estacionamiento(nombre,titular, colonia, numero, telefono, latitud, longitud, correo, password, rol):
+def insert_estacionamiento(nombre,titular, colonia, calle, numero, cp,  latitud, longitud, tarifa,telefono, correo, hora_apertura, hora_cierre, dia_inicio, dia_final ,password, rol):
 	try:
 		return db.insert('estacionamientos',
 			nombre = nombre,
-			apellidos = apellidos,
+			titular = titular,
+			colonia = colonia,
+			calle = calle,
+			numero = numero,
+			cp = cp,
+			latitud = latitud,
+			longitud = longitud,
+			tarifa = tarifa,
 			telefono = telefono,
 			correo = correo,
+			hora_apertura = hora_cierre,
+			hora_cierre = hora_cierre,
+			dia_inicio = dia_inicio,
+			dia_final = dia_final,
 			password = password,
 			rol = rol)
 	except Exception as e:

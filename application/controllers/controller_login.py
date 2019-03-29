@@ -31,7 +31,7 @@ class Login:
 					print log['correo']
 					print log['password']
 					raise web.seeother('/index_u')
-				#elif rol = 2:
+				elif rol = 2:
 					#raise web.seeother('/index_empresa')  #aqui vamos aredireciconar al perfil de empresa
 
 

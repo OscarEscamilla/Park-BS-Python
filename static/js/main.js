@@ -13,38 +13,5 @@ function initMap() {
     map: map,
     position: myLatLng,
     title: '¡Estas Aqui!' 
-  });
+    });
 }
-
-/*
-class Localizacion {
-  constructor(callback) {
-      if (navigator.geolocation) {
-          //obtenemos ubicacion
-          navigator.geolcation.getCurrentPosition((position)=>{
-              this.latitude = position.coords.latitude;
-              this.longitude = position.coords.longitude;
-      callback();
-          });//obetemos la posicion del navegador
-
-      }else{
-          alert("su navegador no soporta geolocalizacion :( ");
-      }
-  }
-}
-
-function initMap() {
-  const ubicacion = new Localizacion(()=>{
-  const options = {
-    center: {
-      lat: ubicacion.latitude,
-      lng: ubicacion.longitude
-    },
-    zoom : 15
-  }
-  var map = document.getElementById('map');
-
-  const mapa = new google.maps.Map(map, options);//dibujamos el mapa
-  });
-  console.log(map);
-} 
