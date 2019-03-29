@@ -22,6 +22,7 @@ create table estacionamientos(
 	colonia varchar(30) not null,
 	calle varchar(30) not null,
 	numero int(5) not null,
+	cp int(5) not null, 
 	latitud varchar(30) not null,
 	longitud varchar(30) not null,
 	tarifa float not null,
@@ -32,7 +33,7 @@ create table estacionamientos(
 	dia_inicio varchar(20) not null,
 	dia_final varchar(20) not null,
 	password varchar(100) not null,
-	disponibilidad int null, <-
+	disponibilidad int null, 
 	estado int null, 
 	imagen varchar(20) null, 
 	puntuacion float null, 

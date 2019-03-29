@@ -1,0 +1,158 @@
+$def with(alert)
+	<div class="container-fluid container-login">
+		
+		<div class="row ">
+			<div class="col-md-3 " ></div>
+			<div class="col-md-6 log-form" >
+				<h4>¡Registrate como empresa!</h4>
+				<p>obten mas clientes y mejora tus ingresos</p>
+				<br>
+				<form action="" method="POST">
+	    			<div class="form-group">
+						<label for="nombre">Nombre de la empresa</label>
+	    			 	<input type="text" class="form-control material"  name="nombre" placeholder="Nombre empresa" required>
+	   				</div>
+	   				<br>
+	    			<div class="form-group">
+						<label for="titular">Nombre del dueño o titular</label>
+	     				<input type="text" class="form-control material" name="titular" placeholder="Nombre del Titular" required>
+	   				</div>
+					<br>
+					<div class="row">
+						<div class="col">
+							<label for="colonia">Colonia</label>
+							<input type="text" placeholder="Colonia" class="form-control material"  name="colonia" required>
+						</div>
+						<div class="col">
+							<label for="cp">Codigo Postal</label>
+							<input type="text" placeholder="Codigo Postal" class="form-control material" pattern="[0-9]+"  name="cp" required>
+						</div>
+					</div>
+					<br>
+					<div class="row">
+						<div class="col">
+							<label for="calle">Calle</label>
+							<input type="text" name="calle" placeholder="Calle" class="form-control material"  required>
+						</div>
+						<div class="col">
+							<label for="numero">Numero</label>
+							<input type="text" name="numero" pattern="[0-9]+" placeholder="numero" class="form-control material"  required>
+						</div>
+					</div>
+					
+					<br>
+	   				<div class="form-group">
+						<label for="tarifa">Tarifa<span>(por Hora)</span></label>
+	   					<input type="text" placeholder="Tarifa por hora" class="form-control material" pattern="[0-9]+"  name="tarifa" required>
+	   				</div>
+
+	   				<br>
+
+	   				<div class="row">
+	   					<div class="col">
+							<label for="telefono">Telefono</label>
+	    			  		<input type="text" class="form-control material"  name="telefono" placeholder="Telefono" required>
+		   				</div>
+		    			<div class="col">
+							<label for="correo">Correo</label>
+	     					<input type="email" class="form-control material" name="correo" placeholder="Correo" required>
+	   					</div>
+	   				</div>
+	   				<br>
+	   				<div class="row">
+	   					<div class="col">
+	   						<label for="hora_apertura">Hora de Apertura </label>
+	   						<input type="time" class="form-control material" value="00:00" name="apertura" required>
+	   					</div>
+	   					<div class="col">
+	   						<label for="hora_cierre">Hora de Cierre </label>
+	   						<input type="time" class="form-control material" value="00:00" name="cierre" required>
+	   					</div>
+	   				</div>
+
+	   				<br>
+	   				<div class="row">
+	   					<div class="col">
+						 	<label for="">Dias Habiles</label>
+							<select class="form-control material" name="dia_inicio">
+								<option value="Lunes">Lunes</option>
+								<option value="Martes">Martes</option>
+								<option value="Miercoles">Miercoles</option>
+								<option value="Jueves">Jueves</option>
+								<option value="Viernes">Viernes</option>
+								<option value="Sabado">Sabado</option>
+								<option value="Domingo">Domingo</option>
+							</select>
+						</div>
+						<div class="col">
+							<label for="dia_final" id="label-invisible">final</label>
+							<select class="form-control material" name="dia_final">
+								<option value="Lunes">Lunes</option>
+								<option value="Martes">Martes</option>
+								<option value="Miercoles">Miercoles</option>
+								<option value="Jueves">Jueves</option>
+								<option value="Viernes">Viernes</option>
+								<option value="Sabado">Sabado</option>
+								<option value="Domingo">Domingo</option>
+							</select>
+						</div>
+	   				</div>
+	   				<br>
+	   				
+					<p>Seleccione su ubicacion</p>
+					<center><div id="map"></div></center><!--contendor del mapa-->
+					<br>
+
+					<div class="row">
+						<div class="col">
+							<label for="latitud">Latitud</label>
+							<input type="text" name="latitud" value="" required  class="form-control material" placeholder="Latitud">
+						</div>
+						<div class="col">
+							<label for="longitud">Longitud</label>
+							<input type="text" name="longitud" value="" required class="form-control material" placeholder="Longitud">
+						</div>
+						
+					</div>
+					<br>
+					<div class="form-group">
+						<small id="link-map" class="form-text text-muted"><a target="_blank" href="https://www.google.com.mx/maps/@20.085971,-98.3663945,15.25z">
+						Si no conoce su longitud y latitud obtengalo desde Google maps haciendo click aqui</a></small>
+					</div>
+						
+					<br>
+					<div class="row">
+						<div class="col">
+							<label for="password">Contraseña</label>
+					 	 	<input type="password" name="password" class="form-control material" placeholder="contraseña..." required>
+						</div>
+						<div class="col">
+							<label for="passwordconf">Confirmar Contraseña</label>
+							<input type="password" name="passwordconf" class="form-control material" placeholder="Confirmar contraseña..." required>
+						</div>
+				  	</div>
+					<br>
+					<a href="/login" id="recuperacion">¿Ya tienes una cuenta? inicia sesion</a>
+					<button type="submit" class="btn btn-success down btn-registro">Registrarme</button>
+				</form>
+			</div>
+			<div class="col-md-3">
+				
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-3"></div>
+			<div class="col-md-6">
+			$if alert == 1:
+				<div class="alert alert-danger" role="alert">
+					¡Las contraseñas no coinciden!
+				</div>
+			</div>
+			<div class="col-md-3"></div>
+		</div>
+	</div>
+
+
+
+	<script src="../../static/js/main.js"></script>
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBs7826NsEFJv4kGgIIGEW-Ky8Kq9KutYM&callback=initMap" async="" defer="defer" type="text/javascript"></script>

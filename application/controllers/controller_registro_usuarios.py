@@ -4,18 +4,18 @@ import hashlib #permite usar hash md5
 
 #mensaje = 1 error de contrasenas no coinciden
 #mensaje = 2
-class Registro:
+class Registro_usuarios:
 	def __init__(self):
 		pass
 
 	def GET(self):
 		alert = 0
-		return config.render.registro(alert)
+		return config.render.registro_usuarios(alert)
 
 	def POST(self):
 
 		try:
-			formulario = web.input() #alamacenamos todos los datos del formulario en variales
+			formulario = web.input() #almamacenamos todos los datos del formulario en variales
 			nombre = formulario['nombre']
 			apellidos = formulario['apellidos']
 			telefono = formulario['telefono']
@@ -28,7 +28,7 @@ class Registro:
 
 			if password == passwordconf:
 				password = hashlib.md5(formulario['password']).hexdigest() #aplica md5 a la cadena de texto
-				config.model_registro.insert_usuario(nombre, apellidos, telefono, correo, password, rol)
+				config.model_usuarios.insert_usuario(nombre, apellidos, telefono, correo, password, rol)
 				raise web.seeother('/login')
 			else:
 				alert = 1

@@ -266,8 +266,15 @@ footer{
 /*mapas*/
 
 #map{
-	width: 200px;
-	height: 200px;
+	width: 600px; 
+	height: 350px;
+}
+
+#link-map{
+	text-decoration: none;
+	color: grey;
+	float: left;
+	font-size: 0.9em;
 }
 
 /* ESTILOS DE INTERFACES DE USUARIOS LOGEADOS */

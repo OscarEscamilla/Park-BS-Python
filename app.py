@@ -3,8 +3,8 @@ import web
 urls = (
 	'/','application.controllers.home.Home',
 	'/login','application.controllers.controller_login.Login',
-	'/registro','application.controllers.controller_registro.Registro',
-	'/registroe','application.controllers.controller_registro_e.Registroe',
+	'/registro_usuarios','application.controllers.controller_registro_usuarios.Registro_usuarios',
+	'/registro_estacionamientos','application.controllers.controller_registro_estacionamientos.Registro_estacionamientos',
 
 	
 	'/index_u','application.controllers.users.controller_index_user.Index',

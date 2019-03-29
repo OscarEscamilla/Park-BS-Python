@@ -4,10 +4,10 @@ import config as config
 
 db = config.db
 
-""" METODO PARA LOCALIZAR EL USUARIO QUE INTENTA LOGEARSE"""
-def insert_empresa(nombre,titular, colonia, numero, telefono,  correo, password, rol):
+""" METODO PARA INSERTAR UN ESTACIONAIENTO"""
+def insert_estacionamiento(nombre,titular, colonia, numero, telefono, latitud, longitud, correo, password, rol):
 	try:
-		return db.insert('usuarios',
+		return db.insert('estacionamientos',
 			nombre = nombre,
 			apellidos = apellidos,
 			telefono = telefono,
@@ -15,8 +15,8 @@ def insert_empresa(nombre,titular, colonia, numero, telefono,  correo, password,
 			password = password,
 			rol = rol)
 	except Exception as e:
-		print "Model insert_empresas Error ()".format(e.args)
-		print "Model insert_empresas Message {}".format(e.message)
+		print "Model insert_estacionamientos Error ()".format(e.args)
+		print "Model insert_estacionamientos {}".format(e.message)
 		return None
 
 def select_estacionamientos():
@@ -25,4 +25,4 @@ def select_estacionamientos():
 	except Exception as e:
 		print "Model select_usuaempresas Error {}".format(e.args)
         print "Model select_usuaempresas Message {}".format(e.message)
-        return None
+        return None 
