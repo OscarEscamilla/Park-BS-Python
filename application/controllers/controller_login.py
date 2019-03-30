@@ -17,6 +17,7 @@ class Login:
 			log = [] #almacena el regsitro encontrado con el correo dado por el usuario y la contrasena
 			formulario = web.input()
 			correo = formulario['correo'] #obtenemos por POST
+			#password = formulario['password']
 			password = hashlib.md5(formulario['password']).hexdigest()#obtenemos por POST y hasheamos a md5
 
 			#referenciamos al modelo y le pasamos los parametros recibidos por POST 
@@ -30,9 +31,9 @@ class Login:
 				if rol == 1:
 					print log['correo']
 					print log['password']
-					raise web.seeother('/index_u')
-				elif rol = 2:
-					#raise web.seeother('/index_empresa')  #aqui vamos aredireciconar al perfil de empresa
+					raise web.seeother('/index_usuarios')
+				elif rol == 2:
+					raise web.seeother('/index_estacionamientos')  #aqui vamos aredireciconar al perfil de empresa
 
 
 		except Exception as e:

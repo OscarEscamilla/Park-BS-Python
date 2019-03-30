@@ -6,7 +6,7 @@ import hashlib #permite usar hash md5
 #mensaje = 2
 class Registro_usuarios:
 	def __init__(self):
-		pass
+		pass 
 
 	def GET(self):
 		alert = 0
@@ -23,8 +23,8 @@ class Registro_usuarios:
 			password = formulario['password'] #aplica md5 a la cadena de texto
 			passwordconf = formulario['passwordconf']
 			rol = '1'
-			usuarios = [] #alacena todos los datos de la tabla usuarios para comprobar si el correo ingresado ya esta asiciado a una cuenta 
-			usuarios = config.model_registro.select_usuarios()
+			 #alacena todos los datos de la tabla usuarios para comprobar si el correo ingresado ya esta asiciado a una cuenta 
+		
 
 			if password == passwordconf:
 				password = hashlib.md5(formulario['password']).hexdigest() #aplica md5 a la cadena de texto
@@ -32,8 +32,8 @@ class Registro_usuarios:
 				raise web.seeother('/login')
 			else:
 				alert = 1
-				return config.render.registro(alert)
+				return config.render.registro_usuarios(alert)
 
 		except Exception as e:
-			alert = 1
-			return config.render.registro(alert)
+			alert = 2
+			return config.render.registro_usuarios(alert)

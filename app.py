@@ -7,8 +7,8 @@ urls = (
 	'/registro_estacionamientos','application.controllers.controller_registro_estacionamientos.Registro_estacionamientos',
 
 	
-	'/index_u','application.controllers.users.controller_index_user.Index',
-	'/index_p','application.controllers.parks.controller_index_parks.Index'
+	'/index_usuarios','application.controllers.users.controller_index_user.Index',
+	'/index_estacionamientos','application.controllers.parks.controller_index_parks.Index'
 
 	
 

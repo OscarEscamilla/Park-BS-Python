@@ -40,3 +40,20 @@ create table estacionamientos(
 	rol int not null,
 	primary key(id)
 );
+
+create table login(
+	id int,
+	correo varchar(50),
+	password varchar(50),
+	rol int
+);
+
+CREATE TRIGGER nuevo_usuario AFTER INSERT ON usuarios
+    FOR EACH ROW
+    INSERT INTO  login (id,correo, password, rol) VALUES
+    (new.id, new.correo ,new.password, new.rol);
+
+CREATE TRIGGER nuevo_estacionamiento AFTER INSERT ON estacionamientos
+    FOR EACH ROW
+    INSERT INTO  login (id,correo, password, rol) VALUES
+    (new.id, new.correo ,new.password, new.rol);

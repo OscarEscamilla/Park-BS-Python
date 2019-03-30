@@ -30,6 +30,7 @@ def insert_estacionamiento(nombre,titular, colonia, calle, numero, cp,  latitud,
 		print "Model insert_estacionamientos {}".format(e.message)
 		return None
 
+""" METODO SELECCIONAR TODOS LOS REGISTROS DE ESTACIONAMIETOS"""
 def select_estacionamientos():
 	try:
 		return db.select('estacionamientos')
@@ -37,3 +38,9 @@ def select_estacionamientos():
 		print "Model select_usuaempresas Error {}".format(e.args)
         print "Model select_usuaempresas Message {}".format(e.message)
         return None 
+
+"""
+def ultimo_estacionamiento():
+	try:
+		return db.select('estacionamientos', where = )
+"""
