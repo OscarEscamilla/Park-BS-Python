@@ -31,13 +31,24 @@ class Login:
 				if rol == 1:
 					print log['correo']
 					print log['password']
-					raise web.seeother('/index_usuarios')
+
+					datosu = 'si renderizo con parametro usuario'
+					#datos = config.model_usuarios.
+					
+					return config.render_usuario.index(datosu) 
+					#en caso de que el rol sea igual a 1 renderizamos el index de usuario pasando como parametro sus datos
+					
 				elif rol == 2:
-					raise web.seeother('/index_estacionamientos')  #aqui vamos aredireciconar al perfil de empresa
+					
+					datose = "si renderizo estacionameitno"
+					return config.render_estacionamientos.index(datose)  #aqui vamos aredireciconar al perfil de empresa
+				else:
+					message = 1
+					return config.render.login(message)
 
 
 		except Exception as e:
-			message = 1  #asignamos el valor 1 a la variable message si el incio de sesion falla y lo enviamos como parametro render.login
+			message = 2  #asignamos el valor 1 a la variable message si el incio de sesion falla y lo enviamos como parametro render.login
 			return config.render.login(message)
 
 		

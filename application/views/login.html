@@ -5,11 +5,12 @@ $def with(message)
 		<div class="col-md-3"></div>
 		<div class="col-md-6">
 			$if message == 1:
-				<br>
-				<br>
-				<br>
 				<div class="alert alert-danger" role="alert">
 					 ¡Contraseña o correo invalidos!
+				</div>
+			$elif message == 2:
+				<div class="alert alert-danger" role="alert">
+					¡Contraseña o correo invalidos!
 				</div>
 		</div>
 		<div class="col-md-3"></div>
