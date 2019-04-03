@@ -18,7 +18,7 @@ class Api_usuarios:
                 web.header('Content-Type', 'application/json')
                 return json.dumps(usuarios_json)
             else:
-                # http://0.0.0.0:8080/api_clientes?user_hash=12345&action=get&id_clientes=1
+              
                 result = config.model.select_usuario(int(id))
                 usuarios_json = []
                 usuarios_json.append(dict(result))
@@ -29,8 +29,19 @@ class Api_usuarios:
             usuarios_json = '[]'
             web.header('Content-Type', 'application/json')
             return json.dumps(usuarios_json)
+    
+    # http://localhost:8080/api_usuarios?user_hash=12345&action=put&nombre=nuevo&apellidos=nuevo&telefono=000000&correo=nuevo@gmail.com&password=nuevo&rol=1
+    def put(self, nombre, apellidos, telefono,  correo, password, rol):
+        try:
+            config.model.insert_usuario( nombre, apellidos, telefono,  correo, password, rol)
+            usuarios_json = '[{200}]'
+            web.header('Content-Type', 'application/json')
+            return json.dumps(usuarios_json)
+        except Exception as e:
+            print "PUT Error {}".format(e.args)
+            return None
 
-
+    #metodo para recibir datos por la url
     def GET(self):
          
         user_data = web.input(
@@ -62,11 +73,11 @@ class Api_usuarios:
                 elif action == 'get':
                     return self.get(id)
                 elif action == 'put':
-                    return self.put(nombre,ape_pat,ape_mat,telefono,email)
+                    return self.put(nombre, apellidos, telefono,  correo, password, rol)
                 elif action == 'delete':
                     return self.delete(id_clientes)
                 elif action == 'update':
-                    return self.update(id_clientes, nombre,ape_pat,ape_mat,telefono,email)
+                    return self.update(id,nombre, apellidos, telefono,  correo, password, rol)
             else:
                 raise web.seeother('/404')
         except Exception as e:
