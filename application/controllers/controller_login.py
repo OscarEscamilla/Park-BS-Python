@@ -36,12 +36,14 @@ class Login:
 					#datos = config.model_usuarios.
 					
 					return config.render_usuario.index(datosu) 
-					#en caso de que el rol sea igual a 1 renderizamos el index de usuario pasando como parametro sus datos
+					#siel rol sea igual a 1 renderizamos el index de usuario pasando como parametro sus datos del model_usuarios
 					
-				elif rol == 2:
-					
+				elif rol == 2: 
+					print log['correo']
+					print log['password']
 					datose = "si renderizo estacionameitno"
-					return config.render_estacionamientos.index(datose)  #aqui vamos aredireciconar al perfil de empresa
+					return config.render_estacionamientos.index(datose) 
+					#si el rol es = 2 renderizamos a el index de estacionamientos con datos del modelo model_estacionamientos
 				else:
 					message = 1
 					return config.render.login(message)

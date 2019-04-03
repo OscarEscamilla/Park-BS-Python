@@ -8,9 +8,10 @@ urls = (
 
 	
 	'/index_usuarios','application.controllers.users.controller_index_user.Index',
-	'/index_estacionamientos','application.controllers.parks.controller_index_parks.Index'
+	'/index_estacionamientos','application.controllers.parks.controller_index_parks.Index',
 
-	
+	'/api_usuarios/?', 'application.api.usuarios.api_usuarios.Api_usuarios'
+
 
 	#'/productos', 'application.controllers.productos.index.Index',
 	#'/insert', 'application.controllers.productos.insert.Insert',
