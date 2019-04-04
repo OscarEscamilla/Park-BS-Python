@@ -35,21 +35,21 @@ class Login:
 					datosu = 'si renderizo con parametro usuario'
 					#datos = config.model_usuarios.
 					
-					return config.render_usuario.index(datosu) 
+					return config.render_usuario.index() 
 					#siel rol sea igual a 1 renderizamos el index de usuario pasando como parametro sus datos del model_usuarios
 					
 				elif rol == 2: 
 					print log['correo']
 					print log['password']
 					datose = "si renderizo estacionameitno"
-					return config.render_estacionamientos.index(datose) 
+					return config.render_estacionamientos.index() 
 					#si el rol es = 2 renderizamos a el index de estacionamientos con datos del modelo model_estacionamientos
 				else:
 					message = 1
 					return config.render.login(message)
 
 
-		except Exception as e:
+		except Exception as e: 
 			message = 2  #asignamos el valor 1 a la variable message si el incio de sesion falla y lo enviamos como parametro render.login
 			return config.render.login(message)
 

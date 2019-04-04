@@ -6,4 +6,5 @@ class Index:
 		pass
 
 	def GET(self):
+		
 		return config.render.index() 

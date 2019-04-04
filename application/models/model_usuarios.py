@@ -15,7 +15,7 @@ def insert_usuario(nombre, apellidos, telefono,  correo, password, rol):
 			telefono = telefono,
 			correo = correo,
 			password = password,
-			rol = rol)
+			rol = rol) 
 	except Exception as e:
 		print "Model insert_user Error ()".format(e.args)
 		print "Model insert_user Message {}".format(e.message)
@@ -40,7 +40,31 @@ def select_usuario(id):
 	except Exception as e:
 		print "Model select_usuario Error {}".format(e.args)
         print "Model select_usuario Message {}".format(e.message)
-        return None 
+        return None
+
+def delete_usuario(id):
+	try:
+		return db.delete('usuarios', where='id=$id', vars=locals())
+
+	except Exception as e:
+		print "Model delete_usuario Error {}".format(e.args)
+        print "Model delete_usuario Message {}".format(e.message)
+        return None
 
 
-
+def update_usuario(id, nombre, apellidos, telefono,  correo, password, rol):
+	try:
+		return db.update('usuarios',
+			nombre = nombre,
+			apellidos = apellidos,
+			telefono = telefono,
+			correo = correo,
+			password = password,
+			rol = rol,
+			where='id=$id',
+            vars=locals())
+			
+	except Exception as e:
+		print "Model update_usuario Error {}".format(e.args)
+        print "Model update_usuario Message {}".format(e.message)
+        return None

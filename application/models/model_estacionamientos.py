@@ -40,6 +40,15 @@ def select_estacionamientos():
         print "Model select_usuaempresas Message {}".format(e.message)
         return None 
 
+
+def select_estacionamiento(id):
+	try:
+		return db.select('estacionamientos', where='id=$id', vars=locals())[0]
+	
+	except Exception as e:
+		print "Model select_usuario Error {}".format(e.args)
+        print "Model select_usuario Message {}".format(e.message)
+        return None
 """
 def ultimo_estacionamiento():
 	try:

@@ -11,51 +11,32 @@ $def with(page)
   <link rel="icon" type="icon" href="../../static/images/car-compact.png">
 </head>
 <body>
-	<header>
 
-<nav class="navbar navbar-expand-lg navbar-light bg-light nav_p fixed-top">
-  <a class="navbar-brand" href="#"><img src="../../static/images/car-compact (4).png" alt="" id="logo">Park-BS</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <a class="nav-link" href="#">Mi perfil</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Reservaciones</a>
-      </li>
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Dropdown
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="#">Ranking</a>
-          <a class="dropdown-item" href="#">Another action</a>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">Something else here</a>
-        </div>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link disabled" href="#">Disabled</a>
-      </li>
-    </ul>
-    
-   <a href=""><img src="../../../static/images/sign-out-option.svg" alt="" width="20px" height="20px" class="logout"></a>
-  </div>
-</nav>
-		
-
-	</header>
-	<br>
 	
-	$:page
+ 
+  <div class="row">
+    <div class="col-3 contenedor">
+      <div id="logo-div">
+          <h2>Park-BS</h2>
+          <img src="../../../static/images/car-compact (5).png" alt="">
+      </div>
+      
+      <div class="list-group" id="list-tab" role="tablist">
+        <a class="list-group-item list-group-item-action active" id="list-home-list" data-toggle="list" href="#list-home" role="tab" aria-controls="home">Home</a>
+        <a class="list-group-item list-group-item-action" id="list-estacionamientos-list" data-toggle="list" href="#list-estacionamientos" role="tab" aria-controls="estacionamientos">Estacionamientos</a>
+        <a class="list-group-item list-group-item-action" id="list-reservaciones-list" data-toggle="list" href="#list-reservaciones" role="tab" aria-controls="reservaciones">Reservaciones</a>
+        <a class="list-group-item list-group-item-action" id="list-perfil-list" data-toggle="list" href="#list-perfil" role="tab" aria-controls="perfil">Perfil</a>
+      </div>
+    </div>
+    <div class="col-9">
+      <div class="tab-content" id="nav-tabContent">
+        $:page
+        
+      </div>
+    </div>
+  </div>
 
-  <footer>
-    
-  </footer>
+
 
     <script src="/static/js/jquery.min.js"></script>
     <script src="/static/js/bootstrap.min.js"></script>   
