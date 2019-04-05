@@ -49,8 +49,3 @@ def select_estacionamiento(id):
 		print "Model select_usuario Error {}".format(e.args)
         print "Model select_usuario Message {}".format(e.message)
         return None
-"""
-def ultimo_estacionamiento():
-	try:
-		return db.select('estacionamientos', where = )
-"""

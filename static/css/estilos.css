@@ -381,7 +381,7 @@ footer{
 }
 #titulo{
 	
-	margin-right: 495px;
+	margin-right: 400px;
 }
 
 .card-text{
@@ -399,7 +399,7 @@ footer{
 
 .card{
 	border-radius: 0px;
-	margin: 2em;
+	margin-top: 10em;
 	width: 250px !important;
 	height: 366px;
 }
@@ -420,4 +420,14 @@ footer{
 .list-group-item:hover{
 	background-color: #1B1A1A;
 	color: white;
+}
+
+#user-img{
+	margin-top: 3em;
+	margin-left: 3em;
+}
+
+
+.nombre-user{
+	padding-top: 5em;
 }
