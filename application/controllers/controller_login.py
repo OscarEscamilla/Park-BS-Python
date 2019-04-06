@@ -14,16 +14,35 @@ class Login:
 
 	def POST(self):
 		try:
-			log = [] #almacena el regsitro encontrado con el correo dado por el usuario y la contrasena
+			log_user = [] #almacena el regsitro encontrado con el correo dado por el usuario y la contrasena
+			log_park = []
 			formulario = web.input()
 			correo = formulario['correo'] #obtenemos por POST
-			#password = formulario['password']
 			password = hashlib.md5(formulario['password']).hexdigest()#obtenemos por POST y hasheamos a md5
 
 			#referenciamos al modelo y le pasamos los parametros recibidos por POST 
-			log = config.model_login.login_user(correo, password) 
+			log_user = config.model_login.login_usuario(correo, password) 	
+			print log_user
+			
+			log_park = config.model_login.login_estacionamiento(correo, password)
+			print log_park
+			
+			if log_user['correo'] == correo and log_user['password'] == password:
+				print log_user['rol']
+				print log_user['correo']
+				print log_user['password']
+				return config.render_usuario.index()
+				  
+			elif log_park['correo'] == correo and log_park['password'] == password:
+				print log_park['rol']
+				print log_park['correo']
+				print log_park['password']
+				return config.render_estacionamientos.index() 
+			else:
+				message = 1
+				return config.render.login(message)
 
-
+			"""
 			#validamos si los datos dados por el usuarios coinciden con los datos devueltos por el modelo
 			if log['correo'] == correo and log['password'] == password:
 				rol = log['rol']
@@ -47,7 +66,7 @@ class Login:
 				else:
 					message = 1
 					return config.render.login(message)
-
+				"""
 
 		except Exception as e: 
 			message = 2  #asignamos el valor 1 a la variable message si el incio de sesion falla y lo enviamos como parametro render.login

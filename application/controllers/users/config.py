@@ -2,7 +2,7 @@ import web
 
 
 #importacion de cada modelo
-import application.models.users.model_user as model_user
+import application.models.model_usuarios as model_usuarios
 
 
 

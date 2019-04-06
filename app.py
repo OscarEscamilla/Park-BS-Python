@@ -6,8 +6,10 @@ urls = (
 	'/registro_usuarios','application.controllers.controller_registro_usuarios.Registro_usuarios',
 	'/registro_estacionamientos','application.controllers.controller_registro_estacionamientos.Registro_estacionamientos',
 
-	
+	#rutas de usuarios
 	'/index_usuarios','application.controllers.users.controller_index_user.Index',
+	'/perfil_usuarios','application.controllers.users.controller_perfil.Perfil',
+	#rutas de estacionamientos
 	'/index_estacionamientos','application.controllers.parks.controller_index_parks.Index',
 
 	'/api_usuarios/?', 'application.api.usuarios.api_usuarios.Api_usuarios',
