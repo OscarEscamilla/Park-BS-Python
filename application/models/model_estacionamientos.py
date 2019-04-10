@@ -6,9 +6,9 @@ import config as config
 db = config.db
 
 """ METODO PARA INSERTAR UN ESTACIONAIENTO"""
-def insert_estacionamiento(nombre,titular, colonia, calle, numero, cp,  latitud, longitud, tarifa,telefono, correo, hora_apertura, hora_cierre, dia_inicio, dia_final ,password, rol):
+def insert_estacionamientos(nombre,titular, colonia, calle, numero, cp,  latitud, longitud, tarifa,telefono, correo, hora_apertura, hora_cierre, dia_inicio, dia_final ,password, rol):
 	try:
-		return db.insert('estacionamientos',
+		return db.insert('parks',
 			nombre = nombre,
 			titular = titular,
 			colonia = colonia,
@@ -34,7 +34,7 @@ def insert_estacionamiento(nombre,titular, colonia, calle, numero, cp,  latitud,
 """ METODO SELECCIONAR TODOS LOS REGISTROS DE ESTACIONAMIETOS"""
 def select_estacionamientos():
 	try:
-		return db.select('estacionamientos')
+		return db.select('parks')
 	except Exception as e:
 		print "Model select_usuaempresas Error {}".format(e.args)
         print "Model select_usuaempresas Message {}".format(e.message)
@@ -43,7 +43,7 @@ def select_estacionamientos():
 
 def select_estacionamiento(id):
 	try:
-		return db.select('estacionamientos', where='id=$id', vars=locals())[0]
+		return db.select('parks', where='id=$id', vars=locals())[0]
 	
 	except Exception as e:
 		print "Model select_usuario Error {}".format(e.args)

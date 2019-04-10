@@ -9,7 +9,7 @@ db = config.db #accede al archivo config y al objeto db
 # METODO PARA REGISTRAR NUEVOS USUARIOS 
 def insert_usuario(nombre, apellidos, telefono,  correo, password, rol):
 	try:
-		return db.insert('usuarios',
+		return db.insert('users',
 			nombre = nombre,
 			apellidos = apellidos,
 			telefono = telefono,
@@ -25,7 +25,7 @@ def insert_usuario(nombre, apellidos, telefono,  correo, password, rol):
 def select_usuarios():
 	try:
 
-	    return db.select('usuarios')
+	    return db.select('users')
 	except Exception as e:
 		print "Model select_usuarios Error {}".format(e.args)
         print "Model select_usuarios Message {}".format(e.message)
@@ -35,7 +35,7 @@ def select_usuarios():
 
 def select_usuario(id):
 	try:
-		return db.select('usuarios', where='id=$id', vars=locals())[0]
+		return db.select('users', where='id=$id', vars=locals())[0]
 	
 	except Exception as e:
 		print "Model select_usuario Error {}".format(e.args)
@@ -44,7 +44,7 @@ def select_usuario(id):
 
 def delete_usuario(id):
 	try:
-		return db.delete('usuarios', where='id=$id', vars=locals())
+		return db.delete('users', where='id=$id', vars=locals())
 
 	except Exception as e:
 		print "Model delete_usuario Error {}".format(e.args)
@@ -54,7 +54,7 @@ def delete_usuario(id):
 
 def update_usuario(id, nombre, apellidos, telefono,  correo, password, rol):
 	try:
-		return db.update('usuarios',
+		return db.update('users',
 			nombre = nombre,
 			apellidos = apellidos,
 			telefono = telefono,

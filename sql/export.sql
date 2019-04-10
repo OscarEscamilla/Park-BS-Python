@@ -43,12 +43,12 @@ CREATE TABLE IF NOT EXISTS `estacionamientos` (
   `imagen` varchar(20) DEFAULT NULL,
   `puntuacion` float DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 
 -- Volcando datos para la tabla park.estacionamientos: 1 rows
 /*!40000 ALTER TABLE `estacionamientos` DISABLE KEYS */;
 INSERT INTO `estacionamientos` (`id`, `nombre`, `titular`, `colonia`, `calle`, `numero`, `cp`, `latitud`, `longitud`, `tarifa`, `telefono`, `correo`, `hora_apertura`, `hora_cierre`, `dia_inicio`, `dia_final`, `password`, `rol`, `disponibilidad`, `estado`, `imagen`, `puntuacion`) VALUES
-	(1, 'estacionamiento', 'estacionamiento', 'estacionamiento', 'estacionamiento', 123, 12345, '4343', '-15165165', 20, '7758965456', 'estacionamiento@estacionamiento', '00:00:00', '00:00:00', 'Lunes', 'Lunes', '1cf22be5c5d6e219528ca3ba66b8fdab', 2, NULL, NULL, NULL, NULL);
+	(2, 'empresa', 'estacionamiento', 'paraiso ', 'zpata', 302, 41520, '4343', '-98652', 20, '4652', 'empresa@empresa', '08:00:00', '08:00:00', 'Jueves', 'Domingo', '04299e213f5391ede16784de41dd847d', 2, NULL, NULL, NULL, NULL);
 /*!40000 ALTER TABLE `estacionamientos` ENABLE KEYS */;
 
 -- Volcando estructura para tabla park.login
@@ -63,9 +63,20 @@ CREATE TABLE IF NOT EXISTS `login` (
 -- Volcando datos para la tabla park.login: 2 rows
 /*!40000 ALTER TABLE `login` DISABLE KEYS */;
 INSERT INTO `login` (`id`, `correo`, `password`, `rol`) VALUES
-	(1, 'usuario@usuario.com', 'f8032d5cae3de20fcec887f395ec9a6a', 1),
-	(1, 'estacionamiento@estacionamiento', '1cf22be5c5d6e219528ca3ba66b8fdab', 2);
+	(2, 'empresa@empresa', '04299e213f5391ede16784de41dd847d', 2),
+	(9, 'usuario@usuario.com', 'f8032d5cae3de20fcec887f395ec9a6a', 1);
 /*!40000 ALTER TABLE `login` ENABLE KEYS */;
+
+-- Volcando estructura para tabla park.sessions
+DROP TABLE IF EXISTS `sessions`;
+CREATE TABLE IF NOT EXISTS `sessions` (
+  `id` int(11) NOT NULL,
+  `rol` int(11) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+-- Volcando datos para la tabla park.sessions: 0 rows
+/*!40000 ALTER TABLE `sessions` DISABLE KEYS */;
+/*!40000 ALTER TABLE `sessions` ENABLE KEYS */;
 
 -- Volcando estructura para tabla park.usuarios
 DROP TABLE IF EXISTS `usuarios`;
@@ -79,12 +90,12 @@ CREATE TABLE IF NOT EXISTS `usuarios` (
   `rol` int(11) NOT NULL DEFAULT '1',
   `imagen` varchar(20) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=10 DEFAULT CHARSET=latin1;
 
 -- Volcando datos para la tabla park.usuarios: 1 rows
 /*!40000 ALTER TABLE `usuarios` DISABLE KEYS */;
 INSERT INTO `usuarios` (`id`, `nombre`, `apellidos`, `telefono`, `correo`, `password`, `rol`, `imagen`) VALUES
-	(1, 'usuario', 'usuario', 5555555, 'usuario@usuario.com', 'f8032d5cae3de20fcec887f395ec9a6a', 1, NULL);
+	(9, 'usuario', 'usuario', 5678, 'usuario@usuario.com', 'f8032d5cae3de20fcec887f395ec9a6a', 1, NULL);
 /*!40000 ALTER TABLE `usuarios` ENABLE KEYS */;
 
 -- Volcando estructura para disparador park.nuevo_estacionamiento

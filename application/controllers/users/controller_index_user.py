@@ -6,6 +6,8 @@ class Index:
 		pass
 
 
-	def GET(self):
+	def GET(self, id):
 		
-		return config.render.index() 
+		datos = config.model_usuarios.select_usuario(id)
+		
+		return config.render.index(datos) 
